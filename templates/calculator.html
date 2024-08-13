@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesap Makinesi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            /* Arka plan resmi ekliyoruz */
+            background-image: url('https://example.com/calculator-bg.jpg'), url('https://example.com/calculator-2.jpg');
+            background-size: cover, 50%;
+            background-position: center, right top;
+            background-repeat: no-repeat;
+            /* Yarı saydamlık için beyaz bir renk katmanı ekliyoruz */
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        .container {
+            /* İçeriğin etrafında biraz boşluk bırakmak için padding */
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Basit Hesap Makinesi</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-row justify-content-center">
+                <div class="col-3">
+                    <input type="text" name="num1" class="form-control" placeholder="Birinci Sayı" required>
+                </div>
+                <div class="col-2">
+                    <select name="operation" class="form-control">
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input type="text" name="num2" class="form-control" placeholder="İkinci Sayı" required>
+                </div>
+                <div class="col-2">
+                    <button type="submit" class="btn btn-primary btn-block">Hesapla</button>
+                </div>
+            </div>
+        </form>
+        {% if result %}
+            <h2 class="text-center mt-4">Sonuç: {{ result }}</h2>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
